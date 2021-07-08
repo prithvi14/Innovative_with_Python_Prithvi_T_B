@@ -1,0 +1,30 @@
+<h1> STUDENT LIST </h1>
+<table border = '1'>
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Department </th>
+            <th> Course </th>
+            <th> Year </th>
+            <th> View </th>
+            <th> Edit </th>
+            <th> Delete </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in object_list %}
+        <tr>
+            <td>{{ student.Name }}</td>
+            <td>{{ student.Department }}</td>
+            <td>{{ student.Course }}</td>
+            <td>{{ student.Year }}</td>
+            <td><a href = "{% url 'detailed_view' student.id %}">view</a></td>
+            <td><a href = "{% url 'edit_update' student.id %}">edit</h3></td>
+            <td><a href = "{% url 'delete' student.id %}">delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+<a href = "{% url 'create' %}">create</a>

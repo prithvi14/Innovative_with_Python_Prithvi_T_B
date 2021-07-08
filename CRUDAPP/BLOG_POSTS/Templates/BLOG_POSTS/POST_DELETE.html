@@ -1,0 +1,7 @@
+<h1> STUDENT DELETE </h1>
+<form method = 'POST'>
+    {% csrf_token %}
+    Are you sure you want to delete "{{object}}"?
+    <input type = "submit", value = "Delete" />
+
+</form>
